@@ -16,7 +16,7 @@ const CardProduct = ({ product, getProductsDetails, addShoppingCars }) => {
     <Box
       sx={{
         display: "flex",
-        width: "20%",
+        width: "100%",
         margin: "10px",
         marginBottom: "0px",
         flexFlow: "dense",

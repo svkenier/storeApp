@@ -3,6 +3,8 @@ import DetailsProductModal from "./DetailsProductModal";
 import ListProducts from "./ListProducts";
 import AppBarHeader from "./AppBarHeader";
 import ShopingCars from "./ShopingCars";
+import Grid from '@mui/material/Grid'
+import MenuHeader from "./MenuHeader";
 
 const MainApp = () => {
   const {
@@ -28,17 +30,26 @@ const MainApp = () => {
 
   return (
     <>
+
       <AppBarHeader showSearch={showSearch} handleShowSearch={handleShowSearch} handleChange={handleChange} handleOpenModalShoppingCars={handleOpenModalShoppingCars} />
-      <ListProducts
+      
+      <MenuHeader/>
+
+      <Grid container spacing={0}>
+        <Grid item xs={6}></Grid>
+      <ListProducts  
         searchProducts={searchProducts}
         getProductsDetails={getProductsDetails}
         addShoppingCars={addShoppingCars}
-      />
+        />
+      <Grid item sx={8} >
       <DetailsProductModal
         specificProduct={specificProduct}
         handleCloseModalView={handleCloseModalView}
         openModalView={openModalView}
-      />
+        />
+        </Grid>
+        </Grid>
       <ShopingCars
         handleCloseModalShoppingCars={handleCloseModalShoppingCars}
         openModalShoppingCars={openModalShoppingCars}
